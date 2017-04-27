@@ -6,16 +6,16 @@
 
 var friendsData = require("../data/friends");
 // var waitListData = require("../data/waitinglistData");
-var friendliest;
+// var friendliest;
 
-for (var i =0; i < friendsData.length ; i++){
-  var total; 
-  for (var j = 0; j < 10 ; i++){
-    var user = friendsData[friendsData.length -1];
+// for (var i =0; i < friendsData.length ; i++){
+//   var total; 
+//   for (var j = 0; j < 10 ; i++){
+//     var user = friendsData[friendsData.length -1];
     
-    console.log(user);
-  }
-}
+//     console.log(user);
+//   }
+// }
 // ===============================================================================
 // ROUTING
 // ===============================================================================
