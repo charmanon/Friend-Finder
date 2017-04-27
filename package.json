@@ -1,0 +1,20 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "make friends easy",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharloteean/Friend-Finder.git"
+  },
+  "author": "charlotte anongos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharloteean/Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/sharloteean/Friend-Finder#readme"
+}
