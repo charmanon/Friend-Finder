@@ -18,6 +18,46 @@
 </head>
 <body>
 
+<style>
+
+.jumbotron{
+  background-image: url(../../images/friends.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100%;
+  min-height:500px;
+}
+
+.title{
+  padding-top: 50px;
+  color:white !important;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.form-group{
+  max-width: 600px;
+}
+
+.panel{
+  max-width: 600px;
+}
+
+.survey{
+  display: flex;
+  align-content: center;
+}
+
+.btn-lg{
+  max-width: 300px;
+}
+
+#photo-friend{
+  width: 300px;
+  height: 300px;
+}
+
+</style>
+
   <div class="container">
     <div class="bg"></div>
     <div class="jumbotron">
@@ -270,7 +310,7 @@
         if (data) {
           $("#stats").show();
           $("#name-friend").text(data[0].name);
-          $("#photo-friend").html(data[0].photo);
+          $("#photo-friend").attr("src",data[0].photo);
         }
       });
     });
