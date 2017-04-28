@@ -8,7 +8,7 @@
 var friends = [
   {
     "name": "Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"http://www.cutestpaw.com/wp-content/uploads/2011/11/Miss-You-My-Love.jpg",
   	"scores":[
       1,
       1,
