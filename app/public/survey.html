@@ -7,10 +7,13 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -26,6 +29,7 @@
       </div>
 
     </div>
+
 
     <div class = "survey">
       <div class = "questions">
@@ -201,7 +205,34 @@
       </div>
     </div>
 
-    <input type="submit" data-inline="true" value="Submit" id="submit">
+   <div class="container">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Your new best friend!</h4>
+          </div>
+          <div class="modal-body">
+            <p>This is him.</p>
+            <h1 id="name-friend"></h1>
+            <img id="photo-friend">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
 
     <footer class="footer">
       <div class="container">
@@ -212,7 +243,7 @@
   </div>
 <script type="text/javascript">
     // Question: What does this code do?
-    $("#submit").on("click", function(event) {
+    $(".btn").on("click", function(event) {
       event.preventDefault();
       var name = $("#name").val().trim();
       var scores = [];
@@ -224,7 +255,7 @@
         photo: $("#photo").val().trim(),
         scores: scores
       };
-      alert("Adding character...");
+      // alert("Adding character...");
 
       // Question: What does this code do??
       $.post("/friends", newCharacter)
@@ -233,7 +264,19 @@
         alert("Adding character...");
       });
       console.log(newCharacter);
+
+      $.get("/friends", function(data) {
+        console.log(data);
+        if (data) {
+          $("#stats").show();
+          $("#name-friend").text(data[0].name);
+          $("#photo-friend").html(data[0].photo);
+        }
+      });
     });
+
+
+
 
   </script>
 
