@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tables Page</title>
-
+  <title>Find Hot Friends!</title>
+  <link rel="icon" type="image/png" href="images/favicon.ico">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- CSS -->
@@ -20,6 +20,10 @@
 
 <style>
 
+body{
+  display: flex;
+}
+
 .jumbotron{
   background-image: url("images/friends.jpg");
   background-repeat: no-repeat;
@@ -35,11 +39,12 @@
 }
 
 .form-group{
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .panel{
-  max-width: 600px;
+  min-width: 600px;
+  max-width: 800px;
 }
 
 .survey{
@@ -48,44 +53,56 @@
 }
 
 .btn-lg{
-  max-width: 300px;
+  max-width: 400px;
 }
 
 #photo-friend{
   width: 300px;
 }
 
-</style>
+.container{
+  margin: auto;
+  text-align: center;
+}
 
+.survey{
+  display: flex;
+}
+
+.questions{
+  margin: auto;
+}
+
+#close{
+  max-width: 200px;
+}
+
+</style>
+  
+  <!--Header -->
   <div class="container">
     <div class="bg"></div>
     <div class="jumbotron">
       <h1 class="text-center title font-family-serif"><span class="glyphicon glyphicon-fire"></span>Find Hot Friends</h1>
       <hr>
-      <div class="text-center">
-       <!--  <a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> Come this way, sexy person</button></a> -->
-        <!-- <a href="/reserve"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a> -->
-      </div>
-
     </div>
 
-
+    <!--Survery questions-->
     <div class = "survey">
       <div class = "questions">
-        <div class="form-group">
-          <label for="name"><h3>Name</h3></label>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h3>Name:</h3></div>
           <input type="text" class="form-control" id="name" required>
           </div>
 
-          <div class="form-group">
-          <label for="role"><h3>Photo:</h3></label>
+          <div class="panel panel-info">
+          <div class="panel-heading"><h3>Photo:</h3></div>
           <input type="text" class="form-control" id="photo" required>
           </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3>How big are your forearms?</h3></div>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h4>How big are your forearms?</h4></div>
           <div class="panel-body">
             <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="ques1">
                 <option>1</option>
                 <option>2</option>
@@ -97,11 +114,10 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3>How big are your teeth?</h3></div>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h4>How big are your teeth?</h4></div>
           <div class="panel-body">
             <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="ques2">
                 <option>1</option>
                 <option>2</option>
@@ -113,11 +129,10 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3>How big are your lips?</h3></div>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h4>How big are your lips?</h4></div>
           <div class="panel-body">
             <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="ques3">
                 <option>1</option>
                 <option>2</option>
@@ -129,11 +144,10 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3>How big are your feet?</h3></div>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h4>How big are your feet?</h4></div>
           <div class="panel-body">
             <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="ques4">
                 <option>1</option>
                 <option>2</option>
@@ -145,11 +159,10 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3>How many pairs of shoes do you wear?</h3></div>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h4>How many pairs of shoes do you wear?</h4></div>
           <div class="panel-body">
             <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="ques5">
                 <option>1</option>
                 <option>2</option>
@@ -161,11 +174,10 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3>How many dogs do you own?</h3></div>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h4>How many dogs do you own?</h4></div>
           <div class="panel-body">
             <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="ques6">
                 <option>1</option>
                 <option>2</option>
@@ -177,11 +189,10 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3>How many tacos did you have last time you had tacos?</h3></div>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h4>How many tacos did you have last time you had tacos?</h4></div>
           <div class="panel-body">
             <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="ques7">
                 <option>1</option>
                 <option>2</option>
@@ -193,8 +204,8 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3>How many times did you say "I love you" to your pet rock?</h3></div>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h4>How many times did you say "I love you" to your pet rock?</h4></div>
           <div class="panel-body">
             <div class="form-group">
               <label for="sel1">Select list (select one):</label>
@@ -209,11 +220,10 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3>Which Rocky movie is your favorite?</h3></div>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h4>Which Rocky movie is your favorite?</h4></div>
           <div class="panel-body">
             <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="ques9">
                 <option>1</option>
                 <option>2</option>
@@ -225,11 +235,10 @@
             </div>
           </div>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"><h3>How are your forearms?</h3></div>
+        <div class="panel panel-info">
+          <div class="panel-heading"><h4>How are your forearms?</h4></div>
           <div class="panel-body">
             <div class="form-group">
-              <label for="sel1">Select list (select one):</label>
               <select class="form-control" id="ques10">
                 <option>1</option>
                 <option>2</option>
@@ -244,9 +253,11 @@
       </div>
     </div>
 
+
+<!--Modal that pops up when the submit button is pressed-->
    <div class="container">
     <!-- Trigger the modal with a button -->
-    <button type="button" id="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Find your new BFF!</button>
+    <button type="button" id="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Find your new BFF!</button>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -256,15 +267,15 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Your new best friend!</h4>
+            <h2 class="modal-title">This is your new best friend!</h2>
           </div>
           <div class="modal-body">
-            <h1>This is your new best friend.</h1>
+            <h3>Lucky you!</h3>
             <h2 id="name-friend"></h2>
             <img id="photo-friend">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="close" class="btn btn-primary" data-dismiss="modal">Close</button>
           </div>
         </div>
         
@@ -275,43 +286,57 @@
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/friends">API Friends List</a> | <a href="https://github.com/sharloteean/Friend-Finder">GitHub Repo</a></p>
+        <p><a href="/friends">API Friends List</a> | <a href="https://github.com/sharloteean/Friend-Finder">GitHub Repo</a> | <a href="/bestfriend">Your best friend</a></p>
       </div>
     </footer>
 
   </div>
 <script type="text/javascript">
+
     // When button is clicked, data from the text fields is saved into a new character object
     $("#submit").on("click", function(event) {
       event.preventDefault();
       var name = $("#name").val().trim();
+      var photo = $("#photo").val().trim();
       var scores = [];
-      $('select','.questions').each(function() {
-        scores.push($(this).val()); 
-      });
-      var newCharacter = {
-        name: name,
-        photo: $("#photo").val().trim(),
-        scores: scores
-      };
-      // alert("Adding character...");
 
-      // Pushes new character to the friends array
-      $.post("/friends", newCharacter)
-      .done(function(data) {
-        console.log(data);
-        alert("Adding character...");
-      });
-      console.log(newCharacter);
+      if (name === ""){
+        event.stopPropagation();
+        alert("Please add your name.");
+      }
 
-      //Gets the new best friend object from the server
-      $.get("/friends", function(data) {
-        if (data) {
-          $("#stats").show();
-          $("#name-friend").text(data.name);
-          $("#photo-friend").attr("src",data.photo);
-        }
-      });
+      else if (photo === ""){
+        event.stopPropagation();
+        alert("Please add your photo link.")
+      }
+
+      else if (name != "" && photo != ""){
+        $('select','.questions').each(function() {
+          scores.push($(this).val()); 
+        });
+        var newCharacter = {
+          name: name,
+          photo: photo,
+          scores: scores
+        };
+
+        // Pushes new character to the friends array
+        $.post("/friends", newCharacter)
+        .done(function(data) {
+          console.log(data);
+          alert("Adding character...");
+        });
+        console.log(newCharacter);
+
+        //Gets the new best friend object from the server
+        $.get("/bestfriend", function(data) {
+          if (data) {
+            $("#stats").show();
+            $("#name-friend").text(data.name);
+            $("#photo-friend").attr("src",data.photo);
+          }
+        });
+      }
     });
 
 
