@@ -4,18 +4,44 @@
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
 
-var friendsData = require("../data/friends");
-// var waitListData = require("../data/waitinglistData");
-// var friendliest;
+var friends = require("../data/friends");
+// var friends = require("./friends.js");
+var indexFriends = friends.length - 1;
+var bestFriendIndex = 0;
+var currentComparison = 40;
 
-// for (var i =0; i < friendsData.length ; i++){
-//   var total; 
-//   for (var j = 0; j < 10 ; i++){
-//     var user = friendsData[friendsData.length -1];
+//The newest user is the last item in the array
+var user = friends[indexFriends];
+
+//Goes through the index of users in array of friends
+for (var i = 0; i < indexFriends; i++){
+  // console.log(friends[i].scores);
+  var totalDifference = 0; 
+
+  //Goes through the index of scores in the users being compared
+  for (var j = 0; j < 10 ; j++){
     
-//     console.log(user);
-//   }
-// }
+    //Calculates the absolute value between the two array scores at each index
+    var difference = Math.abs(parseFloat(user.scores[j]) - parseFloat(friends[i].scores[j]) );
+
+    //Adds the total value of the differences
+    totalDifference = totalDifference + difference;
+  }
+
+  //After calculating the total, checks to see if the total difference is less than the current difference
+  if (totalDifference < currentComparison){
+    
+    //Stores the index of new best friend
+    bestFriendIndex = i;
+
+    //Sets lowest difference to the new number to be compared
+    currentComparison = totalDifference;
+
+    // console.log(currentComparison);
+  }
+}
+
+var bestfriend = friends[bestFriendIndex];
 // ===============================================================================
 // ROUTING
 // ===============================================================================
@@ -28,7 +54,7 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/friends", function(req, res) {
-    res.json(friendsData);
+    res.json(bestfriend);
   });
 
   // app.get("/api/waitlist", function(req, res) {
@@ -45,7 +71,7 @@ module.exports = function(app) {
   app.post("/friends", function(req, res) {
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
-    friendsData.push(req.body);
+    friends.push(req.body);
     
   });
 
@@ -55,8 +81,8 @@ module.exports = function(app) {
 
   app.post("/clear", function() {
     // Empty out the arrays of data
-    friendsData = [];
+    friends = [];
 
-    console.log(friendsData);
+    console.log(friends);
   });
 };
