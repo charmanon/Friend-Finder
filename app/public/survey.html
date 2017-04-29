@@ -281,7 +281,7 @@
 
   </div>
 <script type="text/javascript">
-    // Question: What does this code do?
+    // When button is clicked, data from the text fields is saved into a new character object
     $("#submit").on("click", function(event) {
       event.preventDefault();
       var name = $("#name").val().trim();
@@ -304,6 +304,7 @@
       });
       console.log(newCharacter);
 
+      //Gets the new best friend object from the server
       $.get("/friends", function(data) {
         if (data) {
           $("#stats").show();
